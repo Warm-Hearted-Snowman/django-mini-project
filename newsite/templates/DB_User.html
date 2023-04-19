@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head %}
+    Users
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for user in datas %}
+                    {#    <a href="info/{{ user.id }}">{{ user.first_name | capfirst }} {{ user.last_name | capfirst }}</a><br>#}
+                    <li class="list-group-item">
+                        <div class="card-title">
+                            <h5>{{ user.first_name | capfirst }} {{ user.last_name | capfirst }}</h5>
+                        </div>
+                        <a class="btn btn-primary"
+                           href="{% url 'info' user.id %}">Info</a><br>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

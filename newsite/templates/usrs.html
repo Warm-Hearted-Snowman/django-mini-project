@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block head %}All users{% endblock %}
+{% block content %}
+<ul>
+    {% for name in names %}
+        <li>{{ name | upper }}</li>
+    {% endfor %}
+    {% for key, value in dict.items %}
+        <p>{{ key }}: {{ value }}</p>
+    {% endfor %}
+</ul>
+{% endblock %}

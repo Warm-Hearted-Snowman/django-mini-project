@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ user.first_name | capfirst }}
+{% endblock %}
+{% block content %}
+    <a class="btn btn-danger" href="{% url 'delete' user.id %}">Delete</a>
+    <a class="btn btn-info" href="{% url 'update' user.id %}">Update</a>
+    <h3>{{ user.first_name | capfirst }} {{ user.last_name | capfirst }}</h3>
+    <hr>
+    <small>
+        {{ user.bio }}<br>
+        user added in: {{ user.create }}
+    </small>
+{% endblock %}
